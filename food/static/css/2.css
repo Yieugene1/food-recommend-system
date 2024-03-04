@@ -1,0 +1,94 @@
+.food1-bg {
+    margin-top: 70px;
+    height: 600px;
+    background-color: rgb(245, 240, 231);
+
+}
+
+.food1-bg1 {
+    margin-top: 70px;
+    height: 500px;
+    background-color: rgb(245, 240, 231);
+
+}
+
+.f1 {
+    height: 600px;
+    padding-top: 100px;
+}
+
+.f1-intro {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.gao {
+    height: 100px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.dazhong {
+    width: 1160px;
+    height: 80px;
+    margin-left: 320px;
+    font-family: FangSong;
+    font-size: 40px;
+    background-color: rgb(245, 240, 231);
+}
+
+.piwei {
+    height: 200px;
+    width: 800px;
+}
+
+.yunfu {
+    height: 100px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.jianfei {
+    height: 100px;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.all_shoucang {
+    height: 1400px;
+    width: 1400px;
+    margin: 0 auto;
+    border: 1px solid #dddddd;
+
+}
+
+.all_shoucang .shou_box {
+    width: 1400px;
+
+
+}
+
+.pingfen {
+    margin-top: 50px;
+    height: 500px;
+    margin-left: 300px;
+
+
+}
+
+.style {
+    background-image: url(https://app-file.beitaichufang.com/img/H5/web/banner/banner20.jpg);
+    width: 1903px;
+    transition-duration: 800ms;
+    opacity: 0;
+    transform: translate3d(-9515px, 0px, 0px);
+}
+
+.all3 {
+    width: 700px;
+    height: 270px;
+    margin: auto;
+    margin-top: 50px;
+
+
+}

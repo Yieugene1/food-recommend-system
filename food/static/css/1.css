@@ -1,0 +1,347 @@
+body {
+    margin: 0;
+
+}
+
+
+.header {
+    height: 70px;
+    background-color: #1d2124;
+    position: fixed;
+    z-index: 1071;
+    top: 0;
+
+
+
+}
+.main_header{
+
+    height: 70px;
+    z-index: 1071;
+    position: fixed;
+    top: 0;
+    background:linear-gradient(-180deg,rgba(0,0,0,.2),transparent);
+}
+.header .header1 {
+    float: left;
+    height: 70px;
+    width: 400px;
+    margin-left: 20px;
+    font-family: "楷体";
+    font-size: 30px;
+    color: #333;
+
+
+}
+
+.a1 {
+    margin: 10px;
+    font-size: 20px;
+    color: #333;
+    line-height: 40px;
+    display: inline-block;
+    text-decoration: none;
+
+}
+
+.header a:hover {
+    color: red;
+}
+
+.decoration {
+    height: 740px;
+
+
+
+}
+.decoration1 {
+    height: 740px;
+
+}
+
+.area {
+    margin-top: 200px;
+    height: 1098px;
+    width: 100%;
+
+}
+
+.area .title {
+    width: 1216px;
+    height: 127px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.zi {
+    font-family: "楷体";
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+
+.picture-list {
+    width: 1216px;
+    height: 870px;
+    margin: 20px auto;
+
+}
+
+.picture-list .box {
+    width: 360px;
+    height: 270px;
+    float: left;
+    margin-left: 20px;
+
+}
+
+.box:after {
+    clear: both;
+}
+
+.option {
+    height: 2300px;
+    width: 100%;
+
+}
+
+.option .title-food {
+    height: 130px;
+    width: 60%;
+    margin: 20px auto;
+
+}
+
+.food-list-main {
+    height: 860px;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 10px;
+
+}
+.bai{
+    color: #dddddd;
+}
+.food-list1 {
+    width: 360px;
+    height: 410px;
+     transition: transform 0.5s ease;
+
+}
+.food-list1:hover {
+    transform: scale(1.2);
+}
+
+ .food-img {
+    width: 360px;
+    height: 300px;
+    float: left;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.cook-info {
+    width: 380px;
+    height: 105px;
+    float: left;
+}
+
+.food-list li {
+    padding-bottom: 40px;
+}
+
+.clearfix {
+    margin-top: 20px;
+    zoom: 1;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.cook-info .score {
+    margin: 11px 0 10px;
+}
+
+.cook-info .star {
+    display: inline-block;
+    width: 91px;
+    height: 16px;
+    vertical-align: text-bottom;
+    background: url(https://cp1.douguo.com/static/static/nweb/images/star.png?1) no-repeat;
+    background-size: 100%;
+}
+
+.biaoti {
+    margin-left: 100px;
+    height: 45px;
+    width: 100px;
+    text-decoration: none;
+    color: #1b1e21;
+}
+
+.intro {
+    width: 100%;
+    height: 420px;
+
+}
+
+.intro-text {
+    width: 900px;
+    height: 40px;
+    float: left;
+}
+
+.intro:after {
+    clear: both;
+}
+.food-centre
+{
+    width: 75%;
+    margin: 0 auto;
+}
+.cake
+{
+    height: 971px;
+    width: 1200px;
+
+    margin: 0 auto;
+}
+.featured{
+    color: #fff;
+    letter-spacing: 1px;
+    background-color: #f93f23;
+    margin-left: -5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 550px;
+
+}
+.cake-img
+{
+    height: 446px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.ca1
+{
+    width: 470px;
+    height: 150px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    float: left;
+
+}
+.highlights {
+    border-left: 1px solid #ccc;
+    float: right;
+    padding-left: 2.1875rem;
+    text-align: left;
+    width: 50%;
+}
+.ca2
+{
+    width: 470px;
+    height: 100px;
+}
+.ca2-text
+{
+    width: 270px;
+    height: 100px;
+    float: left;
+}
+.ca2-img
+{
+    height: 77px;
+    width: 116px;
+    float: left;
+}
+.new{
+    height: 450px;
+    width: 100%;
+    background-color: rgb(245, 240, 231);
+
+}
+.new-intro
+{
+    height: 100px;
+    width: 500px;
+    margin: 0 auto;
+
+    padding-top: 30px;
+
+
+}
+.new-content
+{
+    height: 350px;
+    width: 1300px;
+    margin: 0 auto;
+
+}
+.new-box
+{
+    height: 350px;
+    width:  300px ;
+    margin-left: 20px;
+    float: left;
+
+}
+.new-img
+{
+    height: 200px;
+    width: 300px;
+
+}
+.new-text
+{
+
+}
+.new-box:after
+{
+    clear: both;
+}
+.grocery
+{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(245, 240, 231);
+}
+.recommend
+{
+    height: 500px;
+    width: 100%;
+}
+.recommend-content
+{
+    height: 1000px;
+    width: 1200px;
+    margin: 0 auto;
+
+}
+.search_intro
+{
+    height: 80px;
+    width:1240px;
+    margin: 0 auto;
+}
+.food-centre:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
