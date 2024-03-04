@@ -1,0 +1,288 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-4.6.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/2.css' %}">
+</head>
+<body>
+<div class="header">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item" style="margin-left: 290px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/main2" style="color: #dddddd">主页</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="#" role="button" aria-expanded="false"
+               style="color: #dddddd">国内美食</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/chuan/">川菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/yue/">粤菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/xiang/">湘菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/min/">闽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/lu/">鲁菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/zhe/">陕西菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/hui/">徽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/su/">苏菜</a>
+
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="#" role="button" aria-expanded="false"
+               style="color: #dddddd">国外地区美食</a>
+            <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">非洲</a>
+                <a class="dropdown-item" href="#">中东</a>
+                <a class="dropdown-item" href="#">欧洲</a>
+                <a class="dropdown-item" href="#">南美</a>
+                <a class="dropdown-item" href="#">亚洲</a>
+                <a class="dropdown-item" href="#">印度</a>
+                <a class="dropdown-item" href="#">北美</a>
+
+            </div>
+        </li>         <li class="nav-item" style="margin-left:20px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/recommend_all" style="color: #dddddd">个性化推荐</a>
+        </li>
+            <li class="nav-item" style="margin-left:20px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/检索1" style="color: #dddddd">个性化检索</a>
+        </li>
+        <li style="float: right; height: 70px;width: 690px">
+            <div class="dropdown">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="height: 60px;width: 100px;border-radius: 100px;float:right">
+                    <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false" style="display: block; fill: none; height: 30px; width: 16px;float:left;stroke: currentcolor;
+    stroke-width: 3px; overflow: visible;">
+                        <g fill="none" fill-rule="nonzero">
+                            <path d="m2 16h28"></path>
+                            <path d="m2 24h28"></path>
+                            <path d="m2 8h28"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false"
+                         style="display: block; height: 70%; width: 70%;float:left;margin-left:5px;: currentcolor;">
+                        <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
+                    </svg>
+
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dLabel">
+                    <button type="button" class="btn btn btn-lg">
+                        {{ request.session.info.username }}
+
+                    </button>
+                                          <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/user_save/" style="text-decoration:none">个人收藏</a>
+                    </button>
+                                          <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/browse_user/" style="text-decoration:none">浏览记录</a>
+                    </button>
+                    <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/logout/" style="decoration:none">登出</a>
+                    </button>
+                </div>
+
+
+            </div>
+        </li>
+        <li style="clear: both"></li>
+    </ul>
+</div>
+<div class="food1-bg1"  >
+    <a href="" style="margin-left: 300px;float: left;"><img src="{{ MEDIA_URL }}{{ foods.photo }} " alt=""
+                                                            height="540px" width="800px"></a>
+    <h1 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-top: 100px;padding-right: 150px">
+        {{ foods.user }}</h1>
+    {% if x == 0 %}
+        <p>商品收藏量:<span>{{ foods.save_num }}</span> <img src='{% static 'img/shou2.png' %}' alt="" id="save_icon"
+                                                             height="40px" width="40px;"></p>
+    {% endif %}
+    {% if x == 1 %}
+        <p>商品收藏量:<span>{{ foods.save_num }}</span> <img src='{% static 'img/shou1.png' %}' alt="" id="save_icon"
+                                                             height="40px" width="40px;"></p>
+    {% endif %}
+
+    <h4 style=" font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia,
+        serif;text-align: center;padding-top: 120px;padding-right: 200px;">
+        合适人群：</h4>
+    {% if foods.class2 == 'pi' %}
+        <h6 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 200px;">
+            -脾胃虚寒</h6>
+    {% endif %}
+    {% if foods.class2 != 'pi' and foods.class2 != 'gao' and foods.class2 != 'yun' and foods.class2 != 'fei' %}
+        <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 200px;">
+            -适中</h4>
+    {% endif %}
+    {% if foods.class2 == 'yun' %}
+        <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 200px;">
+            -孕妇和宝宝</h4>
+    {% endif %}
+    {% if foods.class2 == 'gao' %}
+        <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 200px;">
+            -高血压</h4>
+    {% endif %}
+    {% if foods.class2 == 'fei' %}
+        <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 200px;">
+            -减肥</h4>
+    {% endif %}
+</div>
+
+<div class="zi piwei"   style="margin-left:300px;font-size:25px; margin-top: 100px">
+{{ foods.intro }}
+</div>
+
+<div class="pingfen" >
+
+    <h3>对"{{ foods.user }}"的打分</h3>
+    <canvas id="rating-canvas" width="450" height="100"></canvas>
+       <br>
+    <h3>对此菜的评价</h3>
+        <input type="text" style="width: 450px;height: 150px" id="comment">
+    <br>
+    <br>
+    <button  onclick="submitRating()">提交评分</button>
+    <script>
+
+        const canvas = document.getElementById("rating-canvas");
+        const ctx = canvas.getContext("2d");
+
+        // 定义爱心的坐标和大小
+        const heartX = 25;
+        const heartY = 25;
+        const heartSize = 40;
+
+        // 星星的数量与分值的映射关系
+        const ratingMap = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5};
+
+        // 设置初始评分值
+        let rating = 3;
+
+        // 绘制爱心
+        function drawHeart(x, y, size, fillStyle) {
+            ctx.fillStyle = fillStyle;
+            ctx.beginPath();
+            ctx.moveTo(x, y - size / 4);
+            ctx.bezierCurveTo(x + size / 2.5, y - size / 3, x + size / 1.5, y + size / 4, x, y + size / 1.5);
+            ctx.bezierCurveTo(x - size / 1.5, y + size / 4, x - size / 2.5, y - size / 3, x, y - size / 4);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+
+        // 绘制所有爱心
+        function drawHearts() {
+            // 清空画布
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 绘制五个爱心
+            for (let i = 0; i < 5; i++) {
+                if (i < rating) {
+                    // 填充红色
+                    ctx.fillStyle = "red";
+                } else {
+                    // 填充灰色
+                    ctx.fillStyle = "gray";
+                }
+
+                // 计算当前爱心的坐标
+                const x = heartX + i * 2 * (heartSize + 5);
+                const y = heartY;
+
+                // 绘制爱心
+                drawHeart(x, y, heartSize, ctx.fillStyle);
+            }
+        }
+
+        // 更新评分值并重新绘制
+        function updateRating(mouseX) {
+            rating = Math.ceil((mouseX - heartX) / ((heartSize + 5) * 2));
+            drawHearts();
+        }
+
+        // 监听鼠标点击事件，更新评分值并重新绘制爱心
+        canvas.addEventListener("click", function (event) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX = event.clientX - rect.left;
+
+            updateRating(mouseX);
+        });
+
+        // 提交评分
+        function submitRating() {
+            const comment = document.getElementById("comment").value;
+            const score = ratingMap[rating];
+            alert("您的评分是：" + score);
+            $.getJSON('{% url 'submit_rating' %}', {'score':score,'comment':comment,'id':{{foods.id}}}, function (data){
+
+            });
+        }
+
+        // 初始化显示
+        drawHearts();
+    </script>
+</div>
+<h3 style="margin-left: 300px">推荐相似商品</h3>
+ <ul class="food-centre">
+        {% for i in leisi %}
+                <li class="clearfix " style="background-size: cover;position: relative;float: left"
+                    target="_blank">
+                    <div class="food-list1" style="margin-left: 40px">
+                        <a href="{% url 'detail_foods' i.id%}" class="food-img"><img src="{{ MEDIA_URL }}{{ i.photo }}" width="400px"
+                                                         height="300px"></a>
+                        <div class="cook-info">
+                            <a class="cookname text-lips " href=""
+                               target="_blank">{{ i.user }}</a>
+                            <p class="major"></p>
+                            <div class="score">
+                                <span class="star star50"></span>
+                                <span>{{ i.score }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+
+
+        {% endfor %}
+
+    </ul>
+<script src={% static 'js/jquery-3.5.1.min.js' %}></script>
+<script src={% static 'js/popper.min.js' %}></script>
+<script src={% static 'js/bootstrap.min.js' %}></script>
+<script>
+    $('#save_icon').click(function () {
+        $this = $(this);
+        path = $this.attr('src');
+        list = path.split('/');
+        img_name = list[list.length - 1];
+        var flag = '';
+        img_path = '';
+        if (img_name == 'shou1.png') {
+            flag = 'save';
+            img_path = '{% static 'img/shou2.png' %}';
+        } else if (img_name == 'shou2.png') {
+            flag = 'unsave';
+            img_path = '{% static 'img/shou1.png' %}';
+
+        }
+        $.getJSON('{% url 'foods_save' %}', {'id':{{foods.id}}, 'flag': flag}, function (data) {
+
+            if (data.msg == 'success') {
+                $this.attr('src', img_path);
+                $this.prev().text(data.number);
+            }
+            if (data.msg == 'unlogin') {
+                alert(data.msg);
+            }
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends '川菜.html' %}
+{% load static %}
+{% block content %}
+    <div class="intro ">
+        <div style="width: 900px;height: 400px;margin: 0 auto">
+            <video src="{% static 'mp4/粤菜.mp4' %}" controls controlslist="nodownload" width="750"
+                   height="400" style="float: left;margin-left: 40px"></video>
+            <div style="float:left;margin-top: 160px">
+                <a tabindex="0" id=kuang1 class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                   data-trigger="focus"
+                   title="简介"
+                   data-content="鲁菜，是中国传统四大菜系（也是八大菜系）中的自发型菜系（相对于淮扬、川、粤等影响型菜系而言），是历史最悠久、技法最丰富、最见功力  的菜系。 是黄河流域烹饪文化的代表。经典菜品有一品豆腐、糖醋鲤鱼、葱烧海参、三丝鱼翅、白扒四宝、糖醋黄河鲤鱼、九转大肠、油爆双脆、扒原壳鲍鱼、油焖大虾、醋椒鱼、糟熘鱼片、温炝鳜鱼片、芫爆鱿鱼卷、清汤银耳、木樨肉（木须肉）、胶东四大拌、糖醋里脊、红烧大虾、招远蒸丸、枣庄辣子鸡、清蒸加吉鱼、济南把子肉、葱椒鱼片、糖酱鸡块、油泼豆莛、诗礼银杏、奶汤蒲菜、乌鱼蛋汤、锅烧鸭、香酥鸡、黄鱼豆腐羹、拔丝山药、蜜汁梨球、砂锅散丹、布袋鸡、芙蓉鸡片、氽芙蓉黄管、阳关三叠、雨前虾仁、乌云托月、黄焖鸡、锅塌黄鱼、奶汤鲫鱼、烧二冬、泰山三美汤、汆西施舌 、赛螃蟹、烩两鸡丝、象眼鸽蛋、云片猴头、油爆鱼芹、油炸全蝎、西瓜鸡等">介绍</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="food-list-main">
+        <div class="title-food" style="width: 70%; height: 40px;">
+            <img src="{% static '/img/Restaurants.png' %}" alt="" style="float: left;margin-top:5px ">
+            <h1 class="zi " style="color: #1b1e21;text-align: left;margin-top:40px">粤菜推荐</h1>
+
+        </div>
+        <ul class="food-centre">
+
+            {% for i in food %}
+                {% if  i.class1 == '5' %}
+
+
+                    <li class="clearfix " style="background-size: cover;position: relative;float: left"
+                        target="_blank">
+                        <div class="food-list1" style="margin-left: 40px">
+                            <a href="" class="food-img"><img src="{{ MEDIA_URL }}{{ i.photo }}" width="400px"
+                                                             height="300px"></a>
+                            <div class="cook-info">
+                                <a class="cookname text-lips " href=""
+                                   target="_blank">{{ i.user }}</a>
+                                <p class="major"></p>
+                                <div class="score">
+                                    <span class="star star50"></span>
+                                    <span>{{i.score}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="{% static 'plugins/bootstrap-4.6.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/2.css' %}">
+</head>
+<body>
+<div class="header">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item" style="margin-left: 290px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/main2" style="color: #dddddd">主页</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="" role="button" aria-expanded="false"
+               style="color: #dddddd">国内美食</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/chuan/">川菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/yue/">粤菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/xiang/">湘菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/min/">闽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/lu/">鲁菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/zhe/">浙菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/hui/">徽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/su/">苏菜</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="#" role="button" aria-expanded="false"
+               style="color: #dddddd">国外地区美食</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">非洲</a>
+                <a class="dropdown-item" href="#">中东</a>
+                <a class="dropdown-item" href="#">欧洲</a>
+                <a class="dropdown-item" href="#">南美</a>
+                <a class="dropdown-item" href="#">亚洲</a>
+                <a class="dropdown-item" href="#">印度</a>
+                <a class="dropdown-item" href="#">北美</a>
+
+            </div>
+        </li>
+        <li style="float: right; height: 70px;width: 1090px">
+            <div class="dropdown">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="height: 60px;width: 100px;border-radius: 100px;float:right">
+                    <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false" style="display: block; fill: none; height: 30px; width: 16px;float:left;stroke: currentcolor;
+    stroke-width: 3px; overflow: visible;">
+                        <g fill="none" fill-rule="nonzero">
+                            <path d="m2 16h28"></path>
+                            <path d="m2 24h28"></path>
+                            <path d="m2 8h28"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false"
+                         style="display: block; height: 70%; width: 70%;float:left;margin-left:5px;: currentcolor;">
+                        <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
+                    </svg>
+
+                    <span class="caret"></span>
+                </button>
+                {% block content %}
+                <div class="dropdown-menu" aria-labelledby="dLabel">
+                    <button type="button" class="btn btn btn-lg" data-toggle="modal" data-target="#myModal"
+                            aria-hidden="false">
+                        登录
+                    </button>
+                    <button type="button" class="btn btn btn-lg" data-toggle="modal" data-target="#myModal1"
+                            aria-hidden="false" style="display: block">
+                        注册
+                    </button>
+                </div>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="height: 500px;
+            width: 600px;
+            border: 2px solid #dddddd;
+            border-radius: 100px;
+            box-shadow: 5px 5px 20px #aaa;
+            margin: 40px auto 0;
+            padding-top:70px;
+            padding-left:70px ">
+                            <h1>用户登录</h1>
+                            <form class="form-horizontal" method="post" action="/login/">
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="账号"
+                                               name="username1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3"
+                                               placeholder="密码" name="password1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default" style="font-size: 1.5rem">登录
+                                        </button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                style="font-size: 1.5rem;float: right">
+                                            取消
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content" style="height: 500px;
+            width: 600px;
+            border: 2px solid #dddddd;
+            border-radius: 100px;
+            box-shadow: 5px 5px 20px #aaa;
+            margin: 40px auto 0;
+            padding-top:70px;
+            padding-left:70px ">
+                            <h1>用户注册</h1>
+                            <form class="form-horizontal" method="POST" action="/register/">
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="账号"
+                                               name="username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3"
+                                               placeholder="密码" name="password">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                            <label class="col-sm-2 control-label" style="padding-top: 20px">喜好：</label>
+                            <select name="hobby1" id="" class="form-control" style="width: 150px;display: inline-block">
+                                <option value="1">川菜</option>
+                                <option value="2">粤菜</option>
+                                <option value="3">湘菜</option>
+                                <option value="4">苏菜</option>
+                                <option value="5">鲁菜</option>
+                                <option value="6">浙菜</option>
+                                <option value="6">徽菜</option>
+                                <option value="7">闽菜</option>
+                            </select>
+                         </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-default" style="font-size: 1.5rem">注册
+                                        </button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                                                style="font-size: 1.5rem;float: right">
+                                            取消
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endblock content %}
+            </div>
+        </li>
+        <li style="clear: both"></li>
+    </ul>
+</div>
+
+<div class="food1-bg">
+     <a href="" style="margin-left: 400px;float: left;"><img src="{% static 'img/n2.webp'%} " alt="" height="700px" ></a>
+     <h1 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-top: 100px;padding-right: 150px">
+            Deep-Fried Matzo Balls with Herby Ranch</h1>
+     <h6 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-top: 70px;padding-right: 300px;">
+            Crunchy, deep-fried, and ultra-fluffy breaded matzo balls paired with an herby horseradish-laced ranch dressing</h6>
+</div>
+<div class="f1">
+    <div class="f1-intro">
+             <h2 style="padding-top: 100px">介绍：</h2>
+             <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-right: 150px">
+            There is something profoundly comforting about a steaming bowl of matzo ball soup — those airy matzo balls floating in a rich chicken stock dotted with carrots and sprinkled with dill. Known for being healing and restorative, matzo ball soup is a prominent feature of my family’s Passover menu plan, and it is, notably, my husband’s all-time favorite food. We take matzo balls pretty seriously in our house.
+
+But even for us, after a while, bowl after bowl of matzo ball soup can feel a bit repetitive. We’ve spiced things up, trying out variations on the theme, such as including a kimchi-enriched broth or adding in the flavors of pho. But when really thinking outside of the bowl, I came up with these deep-fried matzo balls — the light and fluffy matzo balls we love, breaded in a combo of potato starch and panko, then deep-fried until golden-brown and crunchy. Like all fried foods, these deep-fried matzo balls are just begging for a dip, so I pair them with my herby, horseradish-laced ranch dressing. They have quickly become one of our favorite Passover recipes; they’re the perfect snack for Passover or, frankly, any time.</h4>
+             <h4 style="font-family: 'Domaine Text', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;text-align: center;padding-top: 100px;padding-right: 150px">
+          一碗热气腾腾的马索球汤有一种深深的慰藉--那些空气中的马索球漂浮在浓郁的鸡汤中，上面点缀着胡萝卜并撒上莳萝。丸子汤以其治疗和恢复作用而闻名，是我家逾越节菜单计划中的一个突出特点，而且值得注意的是，它是我丈夫一直以来最喜欢的食物。在我们家，我们非常重视马索球。但是，即使对我们来说，过了一段时间，一碗又一碗的马索球汤会让人觉得有点重复。我们已经调味了，在主题上尝试了一些变化，例如包括富含泡菜的汤汁，或者加入了河粉的味道。但是，当真正跳出碗的思维时，我想出了这些油炸马苏球--我们喜欢的轻盈松软的马苏球，用土豆淀粉和Panko的组合面包，然后油炸至金黄色和松脆。像所有的油炸食品一样，这些油炸的马苏球正等待着蘸酱，所以我把它们与我的香草、辣根酱搭配在一起。它们已迅速成为我们最喜欢的逾越节食谱之一；它们是逾越节或坦率地说是任何时候的完美小吃。</h4>
+
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

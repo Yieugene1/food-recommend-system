@@ -1,0 +1,58 @@
+{% extends '川菜.html' %}
+{% load static %}
+{% block content %}
+   <div class="intro " >
+            <div style="width: 900px;height: 400px;margin: 0 auto">
+                <video src="{% static 'mp4/苏菜.mp4' %}" controls controlslist="nodownload" width="750"
+                       height="400" style="float: left;margin-left: 40px"></video>
+                <div style="float:left;margin-top: 160px">
+                    <a tabindex="0" id=kuang1 class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                       data-trigger="focus"
+                       title="简介"
+                       data-content="江苏菜，中国汉族八大菜系之一  ，简称苏菜。由于苏菜和浙菜相近，因此和浙菜统称江浙菜系。主要以金陵菜、淮扬菜、苏锡菜、徐海菜等地方菜组成。江苏菜起源于二千多年前，其中金陵菜起源于先秦时期，当时吴人善制炙鱼、蒸鱼和鱼片，一千多年前，鸭已为南京美食。南宋时，苏菜和浙菜同为“南食”的两大台柱。
+苏菜擅长炖、焖、蒸、炒，重视调汤，保持菜的原汁，风味清鲜，浓而不腻，淡而不薄，酥松脱骨而不失其形，滑嫩爽脆而不失其味。
+金陵菜口味和醇，玲珑细巧；徐州菜色调浓重，习尚五辛；扬州菜清淡适口，刀工精细；苏州菜口味趋甜，清雅多姿。其名菜有金陵烤鸭、彭城鱼丸、老鸭汤、炖生敲、烤方、羊方藏鱼、水晶肴蹄、清炖蟹粉狮子头、霸王别姬、黄泥煨鸡、清炖鸡孚、盐水鸭、金陵板鸭、鼋汁狗肉、金香饼、鸡汤煮干丝、肉酿生麸、红烧沙光鱼、凤尾虾、三套鸭、无锡肉骨头、陆稿荐酱猪头肉等。">介绍</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    <div class="food-list-main">
+        <div class="title-food" style="width: 70%; height: 40px;">
+        <img src="{% static '/img/Restaurants.png' %}" alt="" style="float: left;margin-top:5px ">
+        <h1 class="zi " style="color: #1b1e21;text-align: left;margin-top:40px">苏菜推荐</h1>
+
+    </div>
+        <ul class="food-centre">
+
+            {% for i in food %}
+                {% if  i.class1 == '4' %}
+
+
+                <li class="clearfix " style="background-size: cover;position: relative;float: left"
+                    target="_blank">
+                    <div class="food-list1" style="margin-left: 40px">
+                        <a href="" class="food-img"><img src="{{ MEDIA_URL }}{{ i.photo }}" width="400px"
+                                                         height="300px"></a>
+                        <div class="cook-info">
+                            <a class="cookname text-lips " href=""
+                               target="_blank">{{ i.user }}</a>
+                            <p class="major"></p>
+                            <div class="score">
+                                <span class="star star50"></span>
+                                <span>{{i.score}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+
+
+
+{% endblock content %}

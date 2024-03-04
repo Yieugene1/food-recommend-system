@@ -1,0 +1,57 @@
+{% extends '主页面.html' %}
+{% load static %}
+{% block main2 %}
+    <a class="nav-link zi" href="http://127.0.0.1:8000/main2" style="color: #dddddd">主页</a>
+{% endblock main2 %}
+{% block content %}
+                  <div class="dropdown-menu" aria-labelledby="dLabel">
+                    <button type="button" class="btn btn btn-lg" >
+                        {{request.session.info.username }}
+
+                    </button>
+                      <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/user_save/" style="text-decoration:none">个人收藏</a>
+                    </button>
+                      <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/browse_user/" style="text-decoration:none">浏览记录</a>
+                    </button>
+                    <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/logout/" style="text-decoration:none">登出</a>
+                    </button>
+                </div>
+
+{% endblock content %}
+{% block recommend %}
+    <div class="recommend">
+    <div class="recommend-content">    <div class="title-food" style=" height: 40px;">
+        <img src="{% static '/img/Restaurants.png' %}" alt="" style="float: left;margin-top:5px ">
+        <h1 class="zi " style="color: red;text-align: left;margin-top:40px">最近浏览菜系</h1>
+
+    </div>
+
+    <div style="width: 1200px;height: 880px;margin: 0 auto;">
+        <ul class="food-list-main">
+            {% for i in browse %}
+
+            <li class="clearfix " style="background-size: cover;position: relative;margin-left: 30px;float: right"
+                target="_blank" >
+                <div class="food-list1">
+                    <a href="{% url 'detail_foods' i.id%}" class="food-img"><img src="{{ MEDIA_URL }}{{i.photo }}" width="400px"
+                                                     height="300px"></a>
+                    <div class="cook-info">
+                        <a class="cookname text-lips " href="/cookbook/3237557.html"
+                           target="_blank" style="color: #1d2124;font-size: 20px">{{i.user}}</a>
+                        <div class="score">
+                            <span class="star star50"></span>
+                            <span>{{i.score}}分</span>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            {% endfor %}
+        </ul>
+    </div></div>
+
+     </div>
+{% endblock recommend %}

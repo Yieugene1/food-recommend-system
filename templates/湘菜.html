@@ -1,0 +1,66 @@
+{% extends '川菜.html' %}
+{% load static %}
+{% block content %}
+   <div class="intro " >
+            <div style="width: 900px;height: 400px;margin: 0 auto">
+                <video src="{% static 'mp4/湘菜.mp4' %}" controls controlslist="nodownload" width="750"
+                       height="400" style="float: left;margin-left: 40px"></video>
+                <div style="float:left;margin-top: 160px">
+                    <a tabindex="0" id=kuang1 class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                       data-trigger="focus"
+                       title="简介"
+                       data-content="湘菜，又叫湖南菜，是中国历史悠久的汉族八大菜系之一   ，早在汉朝就已经形成菜系。以湘江流域、洞庭湖区和湘西山区三种地方风味为主。
+湘菜制作精细，用料上比较广泛，口味多变，品种繁多；色泽上油重色浓，讲求实惠；品味上注重香辣、香鲜、软嫩；制法上以煨、炖、腊、蒸、炒诸法见称。
+官府湘菜代表菜品以组庵湘菜为代表，如组庵豆腐、组庵鱼翅等；民间湘菜代表菜品有辣椒炒肉、剁椒鱼头、湘西外婆菜、吉首酸肉、牛肉粉，衡阳鱼粉，栖凤渡鱼粉，东安鸡，金鱼戏莲、永州血鸭、九嶷山兔、宁远酿豆腐、腊味合蒸、姊妹团子 、宁乡口味蛇、岳阳姜辣蛇等。">介绍</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    <div class="food-list-main">
+        <div class="title-food" style="width: 70%; height: 40px;">
+        <img src="{% static '/img/Restaurants.png' %}" alt="" style="float: left;margin-top:5px ">
+        <h1 class="zi " style="color: #1b1e21;text-align: left;margin-top:40px">湘菜推荐</h1>
+
+    </div>
+        <ul class="food-centre">
+
+            {% for i in food %}
+                {% if  i.class1 == '3' %}
+
+
+                <li class="clearfix " style="background-size: cover;position: relative;float: left"
+                    target="_blank">
+                    <div class="food-list1" style="margin-left: 40px">
+                        <a href="{% url 'detail_foods' i.id%}" class="food-img"><img src="{{ MEDIA_URL }}{{ i.photo }}" width="400px"
+                                                         height="300px"></a>
+                        <div class="cook-info">
+                            <a class="cookname text-lips " href=""
+                               target="_blank">{{ i.user }}</a>
+                            <p class="major"></p>
+                            <div class="score">
+                                <span class="star star50"></span>
+                                <span>{{i.score}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                {% endif %}
+            {% endfor %}
+
+        </ul>
+      <nav aria-label="Page navigation example">
+  <ul class="pagination" style="margin-left: 800px">
+    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="{{next}}">Next</a></li>
+  </ul>
+</nav>
+    </div>
+
+
+
+{% endblock content %}

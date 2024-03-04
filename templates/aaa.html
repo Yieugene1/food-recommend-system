@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/updateinfo/" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="updateImg">
+        <label for="">介绍</label>
+        <input type="text"  name="intro"  placeholder="介绍">
+        <label for="">做法</label>
+
+        <input type="text"  name="method"  placeholder="做法">
+        <input type="text"  name="score"  placeholder="分数">
+        <br />
+        <label for="">类别    :</label>
+        <!--
+        <select name="class1" id="">
+            <option value="1">川菜</option>
+            <option value="2">粤菜</option>
+            <option value="3">湘菜</option>
+            <option value="4">苏菜</option>
+            <option value="5">鲁菜</option>
+            <option value="6">浙菜</option>
+            <option value="6">徽菜</option>
+            <option value="7">闽菜</option>
+        </select>
+          -->
+        <input type="checkbox" name="class1" value="1">川菜
+        <input type="checkbox" name="class1" value="2">粤菜
+        <input type="checkbox" name="class1" value="3">湘菜
+        <input type="checkbox" name="class1" value="4">苏菜
+        <input type="checkbox" name="class1" value="5">鲁菜
+        <input type="checkbox" name="class1" value="7">浙菜
+        <input type="checkbox" name="class1" value="8">徽菜
+        <input type="checkbox" name="class1" value="9">闽菜
+        <input type="checkbox" name="class1" value="10">其他
+        <br />
+         <label for="">详细类别   :</label>
+        <input type="checkbox" name="class2" value="fei">减肥
+        <input type="checkbox" name="class2" value="yun">孕妇
+        <input type="checkbox" name="class2" value="gao">高血压
+        <input type="checkbox" name="class2" value="xiao">小孩
+        <input type="checkbox" name="class2" value="mian">面
+        <input type="checkbox" name="class2" value="tang">汤
+        <input type="checkbox" name="class2" value="fan">饭
+        <input type="checkbox" name="class2" value="chi">小吃
+        <input type="checkbox" name="class2" value="pi">健脾养胃
+        <input type="checkbox" name="class2" value="qi">其他
+        <br />
+        <label for="">国内外  :</label>
+        <input type="checkbox" name="country" value="nei">国内
+        <input type="checkbox" name="country" value="wai">国外
+        <br />
+        <label for="">口味   :</label>
+        <select name="taste" id="">
+            <option value="tian">甜</option>
+            <option value="la">辣</option>
+            <option value="xian">咸</option>
+            <option value="zhong">适中</option>
+        </select>
+        <img src="{{ account.photo.url }}" alt=""/></div>
+
+    <input name="photo" type="file" id="exampleInputFile">
+    <button id="photo" class="btn btn-danger" type="submit">上传头像</button>
+</form>
+</body>
+</html>

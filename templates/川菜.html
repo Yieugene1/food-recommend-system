@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-4.6.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/1.css' %}">
+</head>
+<style>
+    .popover {
+        max-width: 500px;
+    }
+
+</style>
+
+<body>
+
+<div class="header">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item" style="margin-left: 290px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/main2" style="color: #dddddd">主页</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="#" role="button" aria-expanded="false"
+               style="color: #dddddd">国内美食</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="http://127.0.0.1:8000/chuan/">川菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/yue/">粤菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/xiang/">湘菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/min/">闽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/lu/">鲁菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/zhe/">陕西菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/hui/">徽菜</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/su/">苏菜</a>
+
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle zi" data-toggle="dropdown" href="#" role="button" aria-expanded="false"
+               style="color: #dddddd">国外地区美食</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">川菜</a>
+                <a class="dropdown-item" href="#">粤菜</a>
+                <a class="dropdown-item" href="#">湘菜</a>
+                <a class="dropdown-item" href="#">东北菜</a>
+                <a class="dropdown-item" href="#">鲁菜</a>
+                <a class="dropdown-item" href="#">陕西菜</a>
+                <a class="dropdown-item" href="#">湖北菜</a>
+
+            </div>
+        </li>         <li class="nav-item" style="margin-left:20px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/recommend_user" style="color: #dddddd">个性化推荐</a>
+        </li>
+         <li class="nav-item" style="margin-left:20px">
+            <a class="nav-link zi" href="http://127.0.0.1:8000/检索1" style="color: #dddddd">个性化检索</a>
+        </li>
+        <li style="float: right; height: 70px;width: 690px">
+            <div class="dropdown">
+                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="height: 60px;width: 100px;border-radius: 100px;float:right">
+                    <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false" style="display: block; fill: none; height: 30px; width: 16px;float:left;stroke: currentcolor;
+    stroke-width: 3px; overflow: visible;">
+                        <g fill="none" fill-rule="nonzero">
+                            <path d="m2 16h28"></path>
+                            <path d="m2 24h28"></path>
+                            <path d="m2 8h28"></path>
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                         focusable="false"
+                         style="display: block; height: 70%; width: 70%;float:left;margin-left:5px;: currentcolor;">
+                        <path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path>
+                    </svg>
+
+                    <span class="caret"></span>
+                </button>
+                                 <div class="dropdown-menu" aria-labelledby="dLabel">
+                    <button type="button" class="btn btn btn-lg" >
+                        {{request.session.info.username }}
+
+                    </button>
+                                     <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/user_save/" style="text-decoration:none">个人收藏</a>
+                    </button>
+                                     <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/browse_user/" style="text-decoration:none">浏览记录</a>
+                    </button>
+                    <button type="button" class="btn btn btn-lg" style="display: block">
+                        <a href="/logout/" style="decoration:none">登出</a>
+                    </button>
+                </div>
+
+
+
+            </div>
+        </li>
+        <li style="clear: both"></li>
+    </ul>
+</div>
+
+
+<div class="option" style="margin-top:70px ">
+    <div class="title-food" style="width: 75%;padding-top: 20px;height: 80px">
+        <div class="navbar-brand zi" href="#">中国主要菜系：</div>
+        <button type="button" class="btn btn-dark"><a class="navbar-brand zi" style="color: #dddddd"
+                                                      href="http://127.0.0.1:8000/chuan">川菜</a></button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px"><a class="navbar-brand zi bai"
+                                                                                href="http://127.0.0.1:8000/yue">粤菜</a>
+        </button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px"><a class="navbar-brand zi bai"
+                                                                                href="http://127.0.0.1:8000/xiang">湘菜</a>
+        </button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px">
+            <a class="navbar-brand zi bai" href="http://127.0.0.1:8000/su">苏菜</a></button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px"><a class="navbar-brand zi bai"
+                                                                                href="http://127.0.0.1:8000/lu">鲁菜</a>
+        </button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px"><a class="navbar-brand zi bai"
+                                                                                href="http://127.0.0.1:8000/zhe">陕西菜</a>
+        </button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px"><a class="navbar-brand zi bai"
+                                                                                href="http://127.0.0.1:8000/hui">徽菜</a>
+        </button>
+        <button type="button" class="btn btn-dark" style="margin-left: 40px">
+
+            <a class="navbar-brand zi bai" href="http://127.0.0.1:8000/min">闽菜</a></button>
+
+
+    </div>
+{% block content %}
+        <div class="intro " >
+            <div style="width: 900px;height: 400px;margin: 0 auto">
+                <video src="{% static 'mp4/川菜.mp4' %}" controls controlslist="nodownload" width="750"
+                       height="400" style="float: left;margin-left: 40px"></video>
+                <div style="float:left;margin-top: 160px">
+                    <a tabindex="0" id=kuang1 class="btn btn-lg btn-danger" role="button" data-toggle="popover"
+                       data-trigger="focus"
+                       title="简介"
+                       data-content="川菜是中国汉族传统的四大菜系之一、中国八大菜系之一。川菜有着本土川菜与海派川菜之分，本土川菜中，四川菜系又包括川味菜肴、面点小吃、火锅等。    川菜以取材广泛，调味多变，菜式多样，口味清鲜，醇浓并重，以善用麻辣调味著称，并以别具一格的烹调方法和浓郁的地方风味闻名，融会了东南西北各方的特点，博采众家之长，善于吸收和创新。
+明末清初，辣椒传入，直至清末，风味特点逐渐定型，并在新中国成立后得到创新发展，川菜以家常菜为主，高端菜为辅，取材多为日常百味，也不乏山珍海鲜。其特点为：“善用三椒”、“一菜一格，百菜百味”；口味多变，包含鱼香、家常、麻辣、红油、蒜泥、姜汁、陈皮、芥末、纯甜、怪味等24种口味。代表菜品有鱼香肉丝、宫保鸡丁、水煮肉片、夫妻肺片、麻婆豆腐、回锅肉、泡椒凤爪、灯影牛肉、口水鸡、香辣虾、麻辣鸡块、重庆火锅、鸡豆花、板栗烧鸡、辣子鸡等。
+">介绍</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    <div class="food-list-main">
+        <div class="title-food" style="width: 70%; height: 40px;">
+        <img src="{% static '/img/Restaurants.png' %}" alt="" style="float: left;margin-top:5px ">
+        <h1 class="zi " style="color: #1b1e21;text-align: left;margin-top:40px">川菜推荐</h1>
+
+    </div>
+        <ul class="food-centre">
+
+            {% for i in food %}
+                <li class="clearfix " style="background-size: cover;position: relative;float: left"
+                    target="_blank">
+                    <div class="food-list1" style="margin-left: 40px">
+                        <a href="{% url 'detail_foods' i.id%}" class="food-img"><img src="{{ MEDIA_URL }}{{ i.photo }}" width="400px"
+                                                         height="300px"></a>
+                        <div class="cook-info">
+                            <a class="cookname text-lips " href=""
+                               target="_blank">{{ i.user }}</a>
+                            <p class="major"></p>
+                            <div class="score">
+                                <span class="star star50"></span>
+                                <span>{{i.score}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            {% endfor %}
+
+        </ul>
+
+    <nav aria-label="Page navigation example">
+  <ul class="pagination" style="margin-left: 800px">
+    <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+    <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+    <li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+    <li class="page-item"><a class="page-link" href="{{next}}">Next</a></li>
+  </ul>
+</nav>
+    </div>
+{% endblock content %}
+
+</div>
+<script src={% static 'js/jquery-3.5.1.min.js' %}></script>
+<script src={% static 'js/popper.min.js' %}></script>
+<script src={% static 'js/bootstrap.min.js' %}></script>
+<script>
+    $(function () {
+        $("#kuang1").popover();
+    });
+
+    function myfunction() {
+        alert('{{ message}}')
+    };
+
+</script>
+</body>
+</html>
+
