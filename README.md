@@ -10,6 +10,13 @@ To address the cold start problem inherent in recommendation systems, we allow u
 
 
 
+
+![image](https://github.com/Yieugene1/food-recommend-system/assets/152032366/a9f7e545-584c-4cf2-80e7-9ffe7aca0984)
+
+
+![image](https://github.com/Yieugene1/food-recommend-system/assets/152032366/256dfceb-6d50-4235-baa2-02e0cb1abb42)
+
+
 ![image](https://github.com/Yieugene1/food-recommend-system/assets/152032366/d5c91d47-e0dd-428c-8e7a-fb6ca8cf97b2)
 
 
